@@ -51,7 +51,7 @@ function Hook.new(closure)
     end
 
     local wrap = { hook, data }
-    hookCache[data] = hookFunction(data, function(...)
+    hookCache[data] = hookFunction(data, newcclosure(...)
         local vargs = {...}
         local uHook = wrap[1]
         local uData = wrap[2]
