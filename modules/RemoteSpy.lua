@@ -44,6 +44,7 @@ local function connectEvent(callback)
     eventSet = true
 end
 
+--[[
 local nmcTrampoline
 nmcTrampoline = hookMetaMethod(game, "__namecall", newcclosure(function(...)
     local instance = ...
@@ -70,7 +71,7 @@ nmcTrampoline = hookMetaMethod(game, "__namecall", newcclosure(function(...)
     end
     return nmcTrampoline(...)
 end))
-
+--]]
 -- Security Fix
 local function checkPermission(instance)
     if instance.ClassName then end
