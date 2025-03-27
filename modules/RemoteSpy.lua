@@ -77,6 +77,7 @@ local function checkPermission(instance)
     if instance.ClassName then end
 end
 
+--[[
 for className, hook in pairs(methodHooks) do
     local originalMethod
     originalMethod = hookFunction(hook, newcclosure(function(...)
@@ -106,7 +107,7 @@ for className, hook in pairs(methodHooks) do
     
     oh.Hooks[originalMethod] = hook
 end
-
+--]]
 RemoteSpy.RemotesViewing = remotesViewing
 RemoteSpy.CurrentRemotes = currentRemotes
 RemoteSpy.ConnectEvent = connectEvent
